@@ -4,9 +4,18 @@ import urllib
 import urllib.request
 import urllib.parse
 
+# Python 3.6.4
 
+# Read a text file
+def read_text():
+    path = "/Users/mustafa/Documents/Office Corner/CV's/Forex Job Description.txt"
+    file = open(path, "r", encoding="utf-8") 
+    file_contents = file.read()
+    #print(file_contents)
+    file.close()
+    check_profanity(file_contents) # Added after creating the "check_profanity" function
 
-
+        
 def check_profanity(text):
         
     site_url = "http://www.wdylike.appspot.com/?"
@@ -27,14 +36,6 @@ def check_profanity(text):
         print("PROFANITY ALERT!!!")
     elif "false" in site_url_contents:
         print("Crystal Clear")
-
-def read_text():
-    path = "/Users/mustafa/Documents/Office Corner/CV's/Forex Job Description.txt"
-    file = open(path, "r", encoding="utf-8")
-    file_contents = file.read()
-    #print(file_contents)
-    check_profanity(file_contents)
-    file.close()
 
 
 read_text()
